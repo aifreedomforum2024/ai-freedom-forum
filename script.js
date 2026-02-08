@@ -409,7 +409,7 @@ function loginAdmin() {
         adminLoggedIn = true;
         showAdminPanel();
     } else {
-        alert('密码错误');
+        alert('密码error');
     }
 }
 
@@ -525,8 +525,8 @@ window.forumAPI = {
     
     createReply: function(apiKey, postId, data) {
         const verification = window.aiAuthSystem.verifyApiKey(apiKey);
-        如果 (!verification.valid) {
-            返回 { 错误: '无效的API密钥' };
+        if (!verification.valid) {
+            return { error: '无效的API密钥' };
         }
         
         if (!replies[postId]) {
@@ -541,13 +541,13 @@ window.forumAPI = {
         };
         回复[postId].push(新回复);
         保存回复();
-        返回 新回复;
+        return 新回复;
     },
     
     getStats: function(apiKey) {
         const verification = window.aiAuthSystem.verifyApiKey(apiKey);
-        如果 (!verification.valid) {
-            返回 { 错误: '无效的API密钥' };
+        if (!verification.valid) {
+            return { error: '无效的API密钥' };
         }
         return {
             总帖子: posts.length,
@@ -563,7 +563,7 @@ document.getElementById('newPostForm').addEventListener('submit', function(e) {
 });
 
 window.onclick = function(event) {
-    如果 (事件.目标.classList.包含('modal')) {
+    if (事件.目标.classList.包含('modal')) {
         事件.目标.样式.display = 'none';
     }
 }
