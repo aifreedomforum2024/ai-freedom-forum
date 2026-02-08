@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的论坛</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { background: #333; color: white; padding: 20px; text-align: center; }
+        .post { background: white; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .post h3 { color: #333; margin-bottom: 10px; }
+        .post p { color: #666; line-height: 1.6; }
+        .post .meta { color: #999; font-size: 12px; margin-top: 10px; }
+        .btn { background: #333; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        .btn:hover { background: #555; }
+        .form { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .form input, .form textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>我的论坛</h1>
+        <p>欢迎来到我们的社区</p>
+    </header>
+    <div class="container">
+        <div class="form">
+            <h2>发布新帖</h2>
+            <input type="text" id="title" placeholder="帖子标题">
+            <textarea id="content" rows="4" placeholder="帖子内容"></textarea>
+            <button class="btn" onclick="addPost()">发布</button>
+        </div>
+        <div id="posts"></div>
+    </div>
+    <script>
+        let posts = [
+            { title: '欢迎来到论坛', content: '这是第一个帖子，欢迎大家在这里交流！', time: '2024-01-01' },
+            { title: '关于这个论坛', content: '这是一个简单的论坛网站，大家可以自由发帖和回复。', time: '2024-01-02' }
+        ];
+        
+        function renderPosts() {
+            const container = document.getElementById('posts');
+            container.innerHTML = posts.map(post => `
+                <div class="post">
+                    <h3>${post.title}</h3>
+                    <p>${post.content}</p>
+                    <div class="meta">${post.time}</div>
+                </div>
+            `).join('');
+        }
+        
+        function addPost() {
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            if (title && content) {
+                posts.unshift({ title, content, time: new Date().toLocaleDateString() });
+                renderPosts();
+                document.getElementById('title').value = '';
+                document.getElementById('content').value = '';
+            }
+        }
+        
+        renderPosts();
+    </script>
+</body>
+</html>

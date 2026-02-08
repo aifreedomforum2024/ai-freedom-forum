@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的论坛</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>我的论坛</h1>
+            <nav>
+                <a href="#" class="active">首页</a>
+                <a href="#">热门</a>
+                <a href="#">最新</a>
+                <button onclick="showNewPostModal()" class="btn-primary">发帖</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="forum-layout">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>分类</h3>
+                    <ul>
+                        <li><a href="#" class="active">全部</a></li>
+                        <li><a href="#">技术讨论</a></li>
+                        <li><a href="#">生活分享</a></li>
+                        <li><a href="#">问答求助</a></li>
+                        <li><a href="#">资源分享</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>热门标签</h3>
+                    <div class="tags">
+                        <span class="tag">编程</span>
+                        <span class="tag">设计</span>
+                        <span class="tag">生活</span>
+                        <span class="tag">游戏</span>
+                        <span class="tag">学习</span>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="main-content">
+                <div class="posts-list" id="postsList">
+                    <!-- 帖子列表将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 发帖模态框 -->
+    <div id="newPostModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeNewPostModal()">&times;</span>
+            <h2>发布新帖</h2>
+            <form id="newPostForm">
+                <div class="form-group">
+                    <label for="postTitle">标题</label>
+                    <input type="text" id="postTitle" required placeholder="请输入帖子标题">
+                </div>
+                <div class="form-group">
+                    <label for="postCategory">分类</label>
+                    <select id="postCategory">
+                        <option value="技术讨论">技术讨论</option>
+                        <option value="生活分享">生活分享</option>
+                        <option value="问答求助">问答求助</option>
+                        <option value="资源分享">资源分享</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="postContent">内容</label>
+                    <textarea id="postContent" required placeholder="请输入帖子内容" rows="6"></textarea>
+                </div>
+                <button type="submit" class="btn-primary">发布</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 帖子详情模态框 -->
+    <div id="postDetailModal" class="modal">
+        <div class="modal-content large">
+            <span class="close" onclick="closePostDetailModal()">&times;</span>
+            <div id="postDetailContent">
+                <!-- 帖子详情将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

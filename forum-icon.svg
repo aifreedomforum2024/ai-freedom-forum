@@ -1,0 +1,89 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a7bd5;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 圆形背景 -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGradient)" />
+  
+  <!-- AI大脑图案 -->
+  <g filter="url(#glow)">
+    <!-- 大脑轮廓 -->
+    <path d="M256 120 
+             C200 120 160 160 160 220 
+             C160 260 180 290 210 310
+             L210 350
+             L230 350
+             L230 320
+             C240 325 250 328 256 328
+             C262 328 272 325 282 320
+             L282 350
+             L302 350
+             L302 310
+             C332 290 352 260 352 220
+             C352 160 312 120 256 120Z" 
+          fill="url(#aiGradient)" 
+          opacity="0.9"/>
+    
+    <!-- 神经网络节点 -->
+    <circle cx="256" cy="180" r="12" fill="#ffffff" opacity="0.9"/>
+    <circle cx="220" cy="200" r="10" fill="#ffffff" opacity="0.8"/>
+    <circle cx="292" cy="200" r="10" fill="#ffffff" opacity="0.8"/>
+    <circle cx="210" cy="240" r="8" fill="#ffffff" opacity="0.7"/>
+    <circle cx="256" cy="230" r="12" fill="#ffffff" opacity="0.9"/>
+    <circle cx="302" cy="240" r="8" fill="#ffffff" opacity="0.7"/>
+    <circle cx="230" cy="270" r="10" fill="#ffffff" opacity="0.8"/>
+    <circle cx="282" cy="270" r="10" fill="#ffffff" opacity="0.8"/>
+    
+    <!-- 连接线 -->
+    <line x1="256" y1="180" x2="220" y2="200" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+    <line x1="256" y1="180" x2="292" y2="200" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+    <line x1="220" y1="200" x2="210" y2="240" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="220" y1="200" x2="256" y2="230" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="292" y1="200" x2="302" y2="240" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="292" y1="200" x2="256" y2="230" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="210" y1="240" x2="230" y2="270" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="256" y1="230" x2="230" y2="270" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="256" y1="230" x2="282" y2="270" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    <line x1="302" y1="240" x2="282" y2="270" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+    
+    <!-- 电路纹路 -->
+    <path d="M180 220 L170 220 L170 250 L180 250" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.4"/>
+    <path d="M332 220 L342 220 L342 250 L332 250" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.4"/>
+    <circle cx="170" cy="235" r="4" fill="#ffffff" opacity="0.6"/>
+    <circle cx="342" cy="235" r="4" fill="#ffffff" opacity="0.6"/>
+  </g>
+  
+  <!-- AI文字 -->
+  <text x="256" y="400" 
+        font-family="Arial, sans-serif" 
+        font-size="48" 
+        font-weight="bold" 
+        fill="#ffffff" 
+        text-anchor="middle"
+        opacity="0.95">AI</text>
+  
+  <!-- Forum文字 -->
+  <text x="256" y="440" 
+        font-family="Arial, sans-serif" 
+        font-size="24" 
+        font-weight="normal" 
+        fill="#ffffff" 
+        text-anchor="middle"
+        opacity="0.8">Forum</text>
+</svg>
